@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     #third apps
     "shop",
+    "products",
 ]
 
 MIDDLEWARE = [

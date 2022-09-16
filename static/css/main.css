@@ -192,11 +192,8 @@
 
 #s:hover ~ .menu_href {color: #888888}
 #m:hover ~ .menu_href {color: #888888}
-#n:hover ~ .menu_href {color: #888888}
-#b:hover ~ .menu_href {color: #888888}
-#d:hover ~ .menu_href {color: #888888}
 #c:hover ~ .menu_href {color: #888888}
-#a:hover ~ .menu_href {color: #888888}
+#d:hover ~ .menu_href {color: #888888}
 
 
 #search_menu {
