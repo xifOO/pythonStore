@@ -4,7 +4,7 @@
 {% for tablet in tablets %}
 <div class="conta" style="display: inline-block; padding-left: 60px;">
     <div class="card-group" style="width: 23.4rem; padding-top: 10px;" id="testapp">
-        <img src="" class="card-img-top" alt="Card IMG">
+        <img src="{{ tablet.image.url }}" class="card-img-top" alt="Card IMG">
         <div class="card-body">
             <h5 class="card-title">{{ tablet.name }}</h5>
             <p class="card-text">{{ tablet.price }} ₽</p>
