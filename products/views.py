@@ -1,24 +1,24 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Phone, Tablet, Notebook
+from .models import Product, Category
 
 
 def phone_category(request):
-    phones = Phone.objects.all()
+    phones = Product.objects.filter(category=Category.objects.get(name="Phones"))
     return render(request, "products/phones.html", {"phones": phones})
 
 
 def notebook_category(request):
-    notebooks = Notebook.objects.all()
+    notebooks = Product.objects.filter(category=Category.objects.get(name="Notebooks"))
     return render(request, "products/notebooks.html", {"notebooks": notebooks})
 
 
 def tablet_category(request):
-    tablets = Tablet.objects.all()
+    tablets = Product.objects.filter(category=Category.objects.get(name="Tablets"))
     return render(request, "products/tablets.html", {"tablets": tablets})
 
 
 def phone_detail(request, slug):
-    phone = get_object_or_404(Phone, slug=slug)
+    phone = get_object_or_404(Product, slug=slug)
     context = {
         "phone": phone
     }
@@ -26,7 +26,7 @@ def phone_detail(request, slug):
 
 
 def notebook_detail(request, slug):
-    notebook = get_object_or_404(Notebook, slug=slug)
+    notebook = get_object_or_404(Product, slug=slug)
     context = {
         "notebook": notebook
     }
@@ -34,7 +34,7 @@ def notebook_detail(request, slug):
 
 
 def tablet_detail(request, slug):
-    tablet = get_object_or_404(Tablet, slug=slug)
+    tablet = get_object_or_404(Product, slug=slug)
     context = {
         "tablet": tablet
     }
