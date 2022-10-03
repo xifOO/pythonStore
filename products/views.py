@@ -19,14 +19,23 @@ def tablet_category(request):
 
 def phone_detail(request, slug):
     phone = get_object_or_404(Phone, slug=slug)
-    return render(request, "products/phone_detail.html", {"phone": phone})
+    context = {
+        "phone": phone
+    }
+    return render(request, "products/phone_detail.html", context=context)
 
 
 def notebook_detail(request, slug):
-    notebook = get_object_or_404(Phone, slug=slug)
-    return render(request, "products/notebook_detail.html", {"notebook": notebook})
+    notebook = get_object_or_404(Notebook, slug=slug)
+    context = {
+        "notebook": notebook
+    }
+    return render(request, "products/notebook_detail.html", context=context)
 
 
 def tablet_detail(request, slug):
     tablet = get_object_or_404(Tablet, slug=slug)
-    return render(request, "products/tablet_detail.html", {"tablet": tablet})
+    context = {
+        "tablet": tablet
+    }
+    return render(request, "products/tablet_detail.html", context=context)
