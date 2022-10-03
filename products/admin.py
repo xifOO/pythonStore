@@ -1,8 +1,6 @@
 from django.contrib import admin
-from .models import Notebook, Phone, Tablet, Category
+from .models import Product, Category
 
 
-admin.site.register(Notebook)
-admin.site.register(Phone)
-admin.site.register(Tablet)
 admin.site.register(Category)
+admin.site.register(Product)
