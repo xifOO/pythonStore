@@ -9,8 +9,10 @@ urlpatterns = [
     path("", include("shop.urls")),
     path("category/", include(("products.urls", "products"), namespace="products_urls")),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('registration.backends.simple.urls')),
-    path("mailing/", include(("mailing.urls", "mailing"), namespace="mailing"))
+    path('accounts/', include(('register.urls', "register"), namespace="register")),
+    path("mailing/", include(("mailing.urls", "mailing"), namespace="mailing")),
+    path('search/', include(('search.urls', 'search'), namespace='search')),
+    path("cart/", include(("cart.urls", "cart"), namespace="cart")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
