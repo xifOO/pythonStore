@@ -12,7 +12,7 @@
             <h4 class="product_name">{{ phone.name | linebreaks}}</h4>
             <p>{{ phone.description | linebreaks}}</p>
             <h3 class="product_price">{{ phone.price }} руб.</h3>
-          <a href="}" class="btn btn-primary" method="get" onclick="alert('Товар добавлен в корзину');">В корзину</a>
+          <a href="{% url 'cart:add_to_cart' phone.id %}" class="btn btn-primary" method="get" onclick="alert('Товар добавлен в корзину');">В корзину</a>
       </div>
     </div>
 </div>

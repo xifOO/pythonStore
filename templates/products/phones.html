@@ -9,7 +9,7 @@
             <h5 class="card-title">{{ phone.name }}</h5>
             <p class="card-text">{{ phone.price }} ₽</p>
             <a href="{% url 'products_urls:phone_detail' phone.slug %}"  class="btn btn-primary">Подробнее</a>
-            <a href="" class="btn btn-primary" onclick="alert('Товар добавлен в корзину');">В корзину</a>
+            <a href="{% url 'cart:add_to_cart' phone.id %}" class="btn btn-primary" onclick="alert('Товар добавлен в корзину');">В корзину</a>
         </div>
     </div>
 </div>
