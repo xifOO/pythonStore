@@ -3,21 +3,25 @@ from .models import Product, Category
 
 
 def phone_category(request):
-    phones = Product.objects.filter(category=Category.objects.get(name="Phones"))
+    "Вывод товара по категории"
+    phones = Product.objects.filter(category=Category.objects.get(name="Phone"))
     return render(request, "products/phones.html", {"phones": phones})
 
 
 def notebook_category(request):
-    notebooks = Product.objects.filter(category=Category.objects.get(name="Notebooks"))
+    "Вывод товара по категории"
+    notebooks = Product.objects.filter(category=Category.objects.get(name="Notebook"))
     return render(request, "products/notebooks.html", {"notebooks": notebooks})
 
 
 def tablet_category(request):
-    tablets = Product.objects.filter(category=Category.objects.get(name="Tablets"))
+    "Вывод товара по категории"
+    tablets = Product.objects.filter(category=Category.objects.get(name="Tablet"))
     return render(request, "products/tablets.html", {"tablets": tablets})
 
 
 def phone_detail(request, slug):
+    """Вывод определенного товара по slug"""
     phone = get_object_or_404(Product, slug=slug)
     context = {
         "phone": phone
@@ -26,6 +30,7 @@ def phone_detail(request, slug):
 
 
 def notebook_detail(request, slug):
+    """Вывод определенного товара по slug"""
     notebook = get_object_or_404(Product, slug=slug)
     context = {
         "notebook": notebook
@@ -34,6 +39,7 @@ def notebook_detail(request, slug):
 
 
 def tablet_detail(request, slug):
+    """Вывод определенного товара по slug"""
     tablet = get_object_or_404(Product, slug=slug)
     context = {
         "tablet": tablet
