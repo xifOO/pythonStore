@@ -26,10 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "registration",
-
     "shop",
     "products",
     "mailing",
+    "search",
+    "cart",
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,6 @@ EMAIL_HOST = secret.EMAIL_HOST
 EMAIL_HOST_USER = secret.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = secret.EMAIL_HOST_PASSWORD
 EMAIL_PORT = secret.EMAIL_PORT
+
+
+CART_SESSION_ID = 'cart'

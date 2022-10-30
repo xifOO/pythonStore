@@ -3,21 +3,19 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{ STATIC_URL }}style.css" />
     <title>{% block title %} Django Auth & Registration Templates {% endblock %}</title>
 </head>
 
 <body>
     <div id="header">
     {% block header %}
-    <a href="/">{% trans "Home" %}</a> |
+    <a href="/">Главная</a> |
 
     {% if user.is_authenticated %}
-        {% trans "Logged in" %}: {{ user.username }}
-        (<a href="{% url 'logout' %}">{% trans "Log out" %}</a> |
-        <a href="{% url 'password_change' %}">{% trans "Change password" %}</a>)
+        {{ user.username }}
+        <a href="{% url 'register:logout' %}">{% trans "Log out" %}</a>
     {% else %}
-       <a href="{% url 'login' %}">{% trans "Log in" %}</a>
+       <a href="{% url 'login' %}">Войти</a>
     {% endif %}
     <hr />
     {% endblock %}
