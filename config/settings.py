@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    "registration",
+    "register",
     "shop",
     "products",
     "mailing",
