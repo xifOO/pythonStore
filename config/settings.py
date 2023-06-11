@@ -1,21 +1,15 @@
 import os
+import secret
 from pathlib import Path
 
-from . import secret
-from .secret import DATABASES, SECRET_KEY, DEBUG, ALLOWED_HOSTS
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY
+SECRET_KEY = secret.SECRET_KEY
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG
+DEBUG = secret.DEBUG
 
-ALLOWED_HOSTS = ALLOWED_HOSTS
-
-# Application definition
+ALLOWED_HOSTS = secret.ALLOWED_HOSTS
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -31,7 +25,6 @@ INSTALLED_APPS = [
     "mailing",
     "search",
     "cart",
-    "payment",
 ]
 
 MIDDLEWARE = [
@@ -67,7 +60,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = DATABASES
+DATABASES = secret.DATABASES
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
